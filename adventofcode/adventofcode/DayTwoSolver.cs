@@ -6,24 +6,9 @@ using System.Threading.Tasks;
 
 namespace adventofcode
 {
-    class DayTwoSolver : ISolver
+    class DayTwoSolver : Solver
     {
-        public override string ToString()
-        {
-            return "Day 2";
-        }
-
-        public Tuple<string, string> solve(string input)
-        {
-            string result1 = solvePartOne(input);
-            string result2 = solvePartTwo(input);
-
-            Tuple<string, string> result = new Tuple<string, string>(result1, result2);
-
-            return result;
-        }
-
-        private string solvePartOne(string input)
+        public override string SolvePartOne(string input)
         {
             int result = 0;
 
@@ -59,7 +44,7 @@ namespace adventofcode
             return result.ToString();
         }
 
-        private string solvePartTwo(string input)
+        public override string SolvePartTwo(string input)
         {
             int result = 0;
 
@@ -99,6 +84,11 @@ namespace adventofcode
             }
 
             return result.ToString();
+        }
+
+        public override string ToString()
+        {
+            return "Day 2";
         }
     }
 }

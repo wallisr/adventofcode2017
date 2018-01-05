@@ -25,10 +25,10 @@ namespace adventofcode
             InitializeComponent();
 
             // Populate the day selection combo box using reflection
-            var solverInterfaceType = typeof(ISolver);
+            var solverInterfaceType = typeof(Solver);
             var allSolvers = AppDomain.CurrentDomain.GetAssemblies()
                 .SelectMany(x => x.GetTypes())
-                .Where(x => solverInterfaceType.IsAssignableFrom(x) && !x.IsInterface)
+                .Where(x => solverInterfaceType.IsAssignableFrom(x) && !x.IsInterface && !x.IsAbstract)
                 .Select(x => Activator.CreateInstance(x));
 
             foreach (ISolver solver in allSolvers)

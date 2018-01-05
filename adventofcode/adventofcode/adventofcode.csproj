@@ -62,6 +62,8 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Solver.cs" />
+    <Compile Include="DayThreeSolver.cs" />
     <Compile Include="DayTwoSolver.cs" />
     <Compile Include="DayOneSolver.cs" />
     <Compile Include="ISolver.cs" />
